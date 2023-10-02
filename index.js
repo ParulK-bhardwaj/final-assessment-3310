@@ -69,6 +69,13 @@ function lastPaymentWhen(lastPaymentDate) {
     var when = lastPayment.when();
     return "Last Payment: ".concat(when);
 }
-var purchasedDate = '2023-08-02T18:13:55Z';
-var formattedPurchasedDate = lastPaymentWhen(purchasedDate);
-console.log(formattedPurchasedDate);
+function formatPhone(phoneNumber) {
+    var phone = typeof phoneNumber === 'number' ? phoneNumber.toString() : phoneNumber;
+    if (phone.length === 10) {
+        var formattedPhoneNumber = "(".concat(phone.slice(0, 3), ") ").concat(phone.slice(3, 6), "-").concat(phone.slice(6));
+        return formattedPhoneNumber;
+    }
+    throw 'error';
+}
+var phoneNumber = '1234567890';
+console.log(formatPhone(phoneNumber));

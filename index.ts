@@ -38,6 +38,16 @@ function lastPaymentWhen(lastPaymentDate: string): string {
     return `Last Payment: ${when}`
 }
 
-const purchasedDate = '2023-08-02T18:13:55Z';
-const formattedPurchasedDate = lastPaymentWhen(purchasedDate);
-console.log(formattedPurchasedDate);
+
+function formatPhone(phoneNumber: number | string): string {
+    const phone = typeof phoneNumber === 'number' ? phoneNumber.toString() : phoneNumber;
+    if (phone.length === 10) {
+        const formattedPhoneNumber = `(${phone.slice(0,3)}) ${phone.slice(3, 6)}-${phone.slice(6)}`;
+        return formattedPhoneNumber;
+    }
+    throw 'error'
+}
+
+const phoneNumber = '1234567890'
+
+console.log(formatPhone(phoneNumber))
