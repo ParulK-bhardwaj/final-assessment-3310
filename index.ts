@@ -46,7 +46,7 @@ export function formatPhone(phoneNumber: number | string): string {
         const formattedPhoneNumber = `(${phone.slice(0,3)}) ${phone.slice(3, 6)}-${phone.slice(6)}`;
         return formattedPhoneNumber;
     }
-    throw 'error'
+    throw "Error: The phone number should be 10 digit number or a 10 character string"
 }
 
 const challenge = {

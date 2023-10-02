@@ -80,7 +80,7 @@ function formatPhone(phoneNumber) {
         var formattedPhoneNumber = "(".concat(phone.slice(0, 3), ") ").concat(phone.slice(3, 6), "-").concat(phone.slice(6));
         return formattedPhoneNumber;
     }
-    throw 'error';
+    throw "Error: The phone number should be 10 digit number or a 10 character string";
 }
 exports.formatPhone = formatPhone;
 var challenge = {
