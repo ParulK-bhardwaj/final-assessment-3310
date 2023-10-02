@@ -28,6 +28,10 @@ test('formatPhone should format a 10-digit phone number correctly', () => {
 test('formatPhone should throw an error when phonenumber is not 10-digit', () => {
     const phoneNumber = '123456789';
     expect(() => formatPhone(phoneNumber)).toThrowError('Error: The phone number should be 10 digit number or a 10 character string');
+    const phoneNumberTwo = '123456789012';
+    expect(() => formatPhone(phoneNumberTwo)).toThrowError('Error: The phone number should be 10 digit number or a 10 character string');
 });
+
+
 
 
