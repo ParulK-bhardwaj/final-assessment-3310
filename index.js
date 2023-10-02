@@ -64,6 +64,11 @@ function formatPurchasedDate(purchasedDate) {
     var formattedPurchaseDate = purchased.format('M D, Y');
     return "Purchased: ".concat(formattedPurchaseDate);
 }
-var purchasedDate = '2018-04-03T18:13:55Z';
-var formattedPurchasedDate = formatPurchasedDate(purchasedDate);
+function lastPaymentWhen(lastPaymentDate) {
+    var lastPayment = new D(lastPaymentDate);
+    var when = lastPayment.when();
+    return "Last Payment: ".concat(when);
+}
+var purchasedDate = '2023-08-02T18:13:55Z';
+var formattedPurchasedDate = lastPaymentWhen(purchasedDate);
 console.log(formattedPurchasedDate);

@@ -27,12 +27,17 @@ function fullName(firstName: string, lastName: string): string {
 const D = require('dates-in-js');
 
 function formatPurchasedDate(purchasedDate: string): string {
-    const purchased= new D(purchasedDate)
+    const purchased = new D(purchasedDate)
     const formattedPurchaseDate = purchased.format('M D, Y')
     return `Purchased: ${formattedPurchaseDate}`
 }
 
+function lastPaymentWhen(lastPaymentDate: string): string {
+    const lastPayment = new D(lastPaymentDate)
+    const when = lastPayment.when()
+    return `Last Payment: ${when}`
+}
 
-const purchasedDate = '2018-04-03T18:13:55Z';
-const formattedPurchasedDate = formatPurchasedDate(purchasedDate);
+const purchasedDate = '2023-08-02T18:13:55Z';
+const formattedPurchasedDate = lastPaymentWhen(purchasedDate);
 console.log(formattedPurchasedDate);
