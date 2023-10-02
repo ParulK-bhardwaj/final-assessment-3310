@@ -4,6 +4,17 @@
     "strinify": "^1.0.2"
   },
   "devDependencies": {
-    "@types/node": "^20.8.0"
-  }
+    "@types/node": "^20.8.0",
+    "jest": "^29.7.0"
+  },
+  "name": "assessment",
+  "description": "Test your skills gained this term by solving this problem.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

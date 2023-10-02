@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.formatPhone = exports.lastPaymentWhen = exports.formatPurchasedDate = exports.fullName = exports.fetchData = void 0;
 function fetchData() {
     return __awaiter(this, void 0, void 0, function () {
         var res, data;
@@ -53,22 +54,26 @@ function fetchData() {
         });
     });
 }
+exports.fetchData = fetchData;
 var S = require("strinify");
 function fullName(firstName, lastName) {
     var fullName = "".concat(S.capitalizeWords(firstName), " ").concat(S.capitalizeWords(lastName));
     return fullName;
 }
+exports.fullName = fullName;
 var D = require('dates-in-js');
 function formatPurchasedDate(purchasedDate) {
     var purchased = new D(purchasedDate);
     var formattedPurchaseDate = purchased.format('M D, Y');
     return "Purchased: ".concat(formattedPurchaseDate);
 }
+exports.formatPurchasedDate = formatPurchasedDate;
 function lastPaymentWhen(lastPaymentDate) {
     var lastPayment = new D(lastPaymentDate);
     var when = lastPayment.when();
     return "Last Payment: ".concat(when);
 }
+exports.lastPaymentWhen = lastPaymentWhen;
 function formatPhone(phoneNumber) {
     var phone = typeof phoneNumber === 'number' ? phoneNumber.toString() : phoneNumber;
     if (phone.length === 10) {
@@ -77,5 +82,12 @@ function formatPhone(phoneNumber) {
     }
     throw 'error';
 }
-var phoneNumber = '1234567890';
-console.log(formatPhone(phoneNumber));
+exports.formatPhone = formatPhone;
+var challenge = {
+    fetchData: fetchData,
+    formatPhone: formatPhone,
+    formatPurchasedDate: formatPurchasedDate,
+    lastPaymentWhen: lastPaymentWhen,
+    fullName: fullName
+};
+exports.default = challenge;
