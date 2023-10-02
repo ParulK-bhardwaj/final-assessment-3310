@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dates-in-js": "^1.0.1",
+    "strinify": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0"
+  }
+}
